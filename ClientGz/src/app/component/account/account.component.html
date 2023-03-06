@@ -1,0 +1,25 @@
+<p>Account</p>
+<div mat-dialog-content fxLayoutGap="20px">
+    <div><img src="assets/images/d.jpg" style="height: 180px;"></div>
+    <br>
+    <mat-form-field style="width: 180px;">
+        <mat-label>Name :</mat-label>
+        <input matInput placeholder="enter name" [(ngModel)]="local_data.name" [formControl]="Name">
+    </mat-form-field>
+    <br>
+    <mat-form-field style="width: 180px;">
+        <mat-label>Password :</mat-label>
+        <input matInput placeholder="enter password" [(ngModel)]="local_data.password"
+            [type]="hide ? 'password' : 'text'" [formControl]="Password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="login()">Login</button>
+
+    <button mat-raised-button color="primary" (click)="regis()">Register</button>
+</mat-dialog-actions>

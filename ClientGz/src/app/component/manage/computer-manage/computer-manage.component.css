@@ -1,0 +1,18 @@
+.grid-container {
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top:10px
+}
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    width: 200px;
+}
+
+.textIcon{
+    text-indent: 40px;
+    font-weight:normal;
+}

@@ -1,0 +1,17 @@
+<div class="grid-container">
+  <h1>Chat Room</h1>
+  <hr style="border-color: rgb(66, 59, 59);">
+  <b>message :</b>
+  <input type="text" id="message" name="message" [(ngModel)]="message">
+  <button type="submit" id="sendmessage" (click)="sendMessage()">
+    Send
+  </button>
+
+  <div *ngIf="messages.length > 0">
+    <div *ngFor="let message of messages">
+      <div class="container">
+        <span>{{message}}</span>
+      </div>
+    </div>
+  </div>
+</div>

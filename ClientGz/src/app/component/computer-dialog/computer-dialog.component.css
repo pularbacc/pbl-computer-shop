@@ -1,0 +1,11 @@
+.picture {
+  width: 40%;
+  float: left;
+  padding: 10px;
+}
+      
+.content {
+  width: 40%;
+  float: right;
+  padding: 10px;
+}

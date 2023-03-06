@@ -1,0 +1,52 @@
+<h2>Info Receiver</h2>
+<mat-vertical-stepper [linear]=true #stepper>
+    <mat-step [stepControl]="NameFormGroup">
+        <form [formGroup]="NameFormGroup">
+            <ng-template matStepLabel>Name</ng-template>
+            <mat-form-field>
+                <mat-label>Enter Name</mat-label>
+                <input matInput formControlName="NameCtrl" placeholder="Ex. Nguyen Cong Nguyen" required
+                    [(ngModel)]="local_data.name">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="PhoneFormGroup">
+        <form [formGroup]="PhoneFormGroup">
+            <ng-template matStepLabel>Phone</ng-template>
+            <mat-form-field>
+                <mat-label>Enter Phone</mat-label>
+                <input matInput formControlName="PhoneCtrl" placeholder="Ex. 0373331104" required
+                    [(ngModel)]="local_data.phone">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="AddressFormGroup">
+        <form [formGroup]="AddressFormGroup">
+            <ng-template matStepLabel>Address</ng-template>
+            <mat-form-field>
+                <mat-label>Enter Address</mat-label>
+                <input matInput formControlName="AddressCtrl" placeholder="Ex. 285 PhamVanDong" required
+                    [(ngModel)]="local_data.address">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-raised-button matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" (click)="order()">Submit</button>
+        </div>
+    </mat-step>
+</mat-vertical-stepper>

@@ -1,0 +1,33 @@
+<h1>
+    <mat-icon>shopping_cart</mat-icon>Detail Bill
+</h1>
+<div mat-dialog-content fxLayoutGap="20px" style="width:1000px;height: 1000px;">
+    <hr>
+    <div><b>Receiver : </b>{{local_data.name}}</div> 
+    <div><b>Phone : </b>{{local_data.phone}}</div>
+    <div><b>Address : </b>{{local_data.address}}</div>
+    <div><b>Total : </b>{{local_data.totalPrice}} K</div>
+    <hr>
+    <div *ngIf="!local_data.shipping && !local_data.received"><b>Status : Processing</b></div>
+    <div *ngIf="local_data.shipping && !local_data.received"><b>Status : Shipping</b></div>
+    <div *ngIf="local_data.received"><b>Status : Received</b></div>
+    <hr>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="33%" *ngFor="let item of local_data.billDetail">
+            <mat-card class="mat-elevation-z4">
+                <mat-card-header>
+                    <mat-card-title>{{item.computer.name}}
+                    </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image [src]="item.computer.compon.image" style="height: 200px;">
+                <mat-card-content>
+                    <div><b>Price : [{{item.computer.price}}] K</b></div>
+                    <br>
+                    <div>
+                        <b>Num : [{{item.quanLiTy}}] </b>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

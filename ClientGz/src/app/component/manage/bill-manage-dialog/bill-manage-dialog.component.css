@@ -1,0 +1,8 @@
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  } 
+
+  .textIcon{
+    text-indent: 20px;
+    font-weight:normal;
+}
